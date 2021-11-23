@@ -12,5 +12,6 @@ const userSchema = new Schema({
     },
     hashedPassword: {
         type: String,
-    }
+    },
+    boughtGames: [{ type: Schema.Types.ObjectId, ref: 'Game' }],
 });
