@@ -15,3 +15,5 @@ const userSchema = new Schema({
     },
     boughtGames: [{ type: Schema.Types.ObjectId, ref: 'Game' }],
 });
+
+module.exports = model('User', userSchema);
