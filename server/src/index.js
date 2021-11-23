@@ -23,13 +23,15 @@ async function startApp() {
 
             if (err) throw new Error(err);
 
-            console.log(`Server is up and running on port ${PORT}...`);
+            console.log(`Server is up and listening on port ${PORT}...`);
 
         });
 
     } catch (err) {
 
-        console.log(err);
+        err.name == 'MongoParseError'
+            ? console.log('A db error occurred: ', err.message)
+            : console.log('A server error occurred: ', err.message);
 
     }
 
