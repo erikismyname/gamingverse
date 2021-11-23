@@ -29,9 +29,11 @@ async function startApp() {
 
     } catch (err) {
 
-        err.name == 'MongoParseError'
-            ? console.log('A db error occurred: ', err.message)
-            : console.log('A server error occurred: ', err.message);
+        console.log(
+            err.name == 'MongoParseError'
+                ? `A db error occurred: ${err.message}`
+                : `A server error occurred: ${err.message}`
+        );
 
     }
 
