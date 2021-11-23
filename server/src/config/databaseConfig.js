@@ -1,1 +1,1 @@
-module.exports = async (mongoose, dbConnStr) => mongoose.connect(dbConnStr);
+module.exports = (mongoose, dbConnStr) => mongoose.connect(dbConnStr);
