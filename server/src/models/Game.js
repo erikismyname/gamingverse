@@ -10,6 +10,9 @@ const gameSchema = new Schema({
     genre: [{
         type: String,
     }],
+    platform: {
+        type: String,
+    },
     description: {
         type: String,
     },
