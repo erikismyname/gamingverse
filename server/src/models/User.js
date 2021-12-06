@@ -37,7 +37,6 @@ const userSchema = new Schema({
     },
     offeredGames: [{ type: Schema.Types.ObjectId, ref: 'Game' }],
     orderedGames: [{ type: Schema.Types.ObjectId, ref: 'Game' }],
-
 });
 
 module.exports = model('User', userSchema);
