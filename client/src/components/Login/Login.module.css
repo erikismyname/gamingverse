@@ -1,20 +1,18 @@
-form {
+.login-form {
     position: absolute;
     top: 50%;
     left: 20%;
     transform: translate(-50%, -50%);
-
-    width: 400px;
-    height: 300px;
-
-    /* padding: 40px; */
+    width: 20%;
+    height: 30%;
+    text-align: center;
+    padding: 10px;
     border-radius: 20px;
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
     background-color: rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
-h1 {
+.login-form-title {
     text-transform: uppercase;
 }
 
@@ -40,12 +38,19 @@ input[type="submit"] {
     outline: none;
     background: none;
     width: 100px;
-    height: 30px;
+    padding: 3px;
     border-radius: 20px;
     transition: width 0.25s;
+    margin-bottom: 15px;
 }
 
 input[type="submit"]:hover {
     cursor: pointer;
     width: 110px;
+    background-color: black;
+    color: white;
+}
+
+.login-form a {
+    color: lightskyblue;
 }
