@@ -1,19 +1,26 @@
-header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    padding: 5px;
 }
 
-ul {
+.nav-ul {
     display: flex;
 }
 
-li {
+.nav-li {
     list-style: none;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
-a {
+.nav-a {
     text-decoration: none;
     color: black;
+    letter-spacing: 1px;
+}
+
+.underline:hover {
+    padding-bottom: 3px;
+    border-bottom: 2px solid;
 }
