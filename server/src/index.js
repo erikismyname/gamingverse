@@ -1,24 +1,19 @@
 const express = require('express');
-const mongoose = require('mongoose');
 
 const { DB_CONNECTION_STRING, PORT } = require('./config/constantsConfig.js');
 const databaseConfig = require('./config/databaseConfig.js');
 const expressConfig = require('./config/expressConfig.js');
 const routesConfig = require('./config/routesConfig.js');
 
-startApp();
-
-async function startApp() {
+const startApp = async () => {
 
     const app = express();
 
     try {
 
-        await databaseConfig(mongoose, DB_CONNECTION_STRING);
+        await databaseConfig(DB_CONNECTION_STRING);
 
-        console.log('Successfully connected to db!');
-
-        expressConfig(express, app);
+        expressConfig(app);
 
         routesConfig(app);
 
@@ -41,3 +36,5 @@ async function startApp() {
     }
 
 }
+
+startApp();
