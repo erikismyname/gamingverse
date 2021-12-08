@@ -17,3 +17,5 @@ const getUserByUsername = async (username) => {
 }
 
 const registerUser = (userData) => User.create(userData);
+
+module.exports = { getUserByEmail, getUserByUsername, registerUser };
