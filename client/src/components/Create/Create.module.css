@@ -1,11 +1,11 @@
 .create-form {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 20%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    margin: 30px;
     width: 20%;
     height: 38%;
-
     padding: 10px;
     border-radius: 20px;
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);

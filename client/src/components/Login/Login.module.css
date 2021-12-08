@@ -1,8 +1,9 @@
 .login-form {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 20%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    margin: 30px;
     width: 20%;
     height: 30%;
     text-align: center;
