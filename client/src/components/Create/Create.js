@@ -1,11 +1,11 @@
-import style from './Create.module.css';
+import styles from './Create.module.css';
 
 const Create = () => {
 
     return (
         <section>
-            <form className={style['create-form']}>
-                <h1>Create</h1>
+            <form className={styles['create-form']}>
+                <h1 className={styles['create-form-heading']}>Create</h1>
                 <input type="text" name="title" placeholder="Title" />
                 <input type="text" name="image-url" placeholder="Image URL" />
                 <textarea name="description" placeholder="Description" />
