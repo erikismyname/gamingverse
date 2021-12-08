@@ -11,3 +11,5 @@ const createGame = async (gameData) => Game.create(gameData);
 const updateGame = async (gameId, gameData) => Game.findByIdAndUpdate(gameId, gameData);
 
 const deleteGame = async (gameId) => Game.findByIdAndDelete(gameId);
+
+module.exports = { getAllGames, getSingleGame, getUserGames, createGame, updateGame, deleteGame };
