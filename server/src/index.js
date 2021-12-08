@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { DB_CONNECTION_STRING, PORT } = require('./config/constantsConfig.js');
+const { DB_CONNECTION_STRING, SERVER_PORT } = require('./config/constantsConfig.js');
 const databaseConfig = require('./config/databaseConfig.js');
 const expressConfig = require('./config/expressConfig.js');
 const routesConfig = require('./config/routesConfig.js');
@@ -17,11 +17,11 @@ const startApp = async () => {
 
         routesConfig(app);
 
-        app.listen(PORT, (err) => {
+        app.listen(SERVER_PORT, (err) => {
 
             if (err) throw new Error(err);
 
-            console.log(`Server is up and listening on port ${PORT}...`);
+            console.log(`Server is up and listening on port ${SERVER_PORT}...`);
 
         });
 
