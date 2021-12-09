@@ -2,7 +2,7 @@ const gameService = require('../services/gameService.js');
 
 module.exports = () => (req, res, next) => {
 
-    req.gameActions = { ...gameService };
+    req.games = { ...gameService };
 
     next();
 
