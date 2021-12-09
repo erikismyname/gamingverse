@@ -1,20 +1,8 @@
 const User = require('../models/User.js');
 
-const getUserByEmail = async (email) => {
+const getUserByEmail = async (email) => User.findOne({ email: { $regex: `^${email}$` } });
 
-    const emailPattern = new RegExp(`^${email}$`);
-
-    return User.findOne({ email: emailPattern });
-
-};
-
-const getUserByUsername = async (username) => {
-
-    const usernamePattern = new RegExp(`^${username}$`);
-
-    return User.findOne({ username: usernamePattern });
-
-}
+const getUserByUsername = async (username) => User.findOne({ username: { $regex: `^${username}$` } });
 
 const registerUser = (userData) => User.create(userData);
 
