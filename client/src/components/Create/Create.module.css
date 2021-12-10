@@ -1,57 +1,81 @@
-.create-form {
-    /* position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%); */
-    margin: 30px;
+#create-section form {
+    margin: auto;
     width: 20%;
-    height: 38%;
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.1);
+    height: 350px;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-.create-form-heading {
+#create-section form h1,
+#create-section form input[type="text"],
+#create-section form textarea,
+#create-section form input[type="submit"] {
+    color: white;
+}
+
+#create-section form h1 {
+    display: inline-block;
+    margin: 30px 0px;
     text-transform: uppercase;
 }
 
-input[type="text"], textarea {
+#create-section form input[type="text"],
+#create-section form textarea,
+#create-section form input[type="submit"] {
     display: block;
-    border: 3px solid black;
-    outline: none;
+    margin: auto;
     background: none;
-    margin: 30px auto;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    letter-spacing: 1.5px;
+}
+
+#create-section form input[type="text"],
+#create-section form input[type="submit"] {
+    font-size: 14px;
+}
+
+
+#create-section form input[type="text"],
+#create-section form textarea {
     text-align: center;
+    width: 75%;
     padding: 10px;
-    width: 250px;
-    border-radius: 20px;
-    transition: width 0.25s;
 }
 
-textarea {
-    resize: none;
+#create-section form input[type="text"]:hover,
+#create-section form textarea:hover {
+    font-weight: bold;
+    width: 78%;
+    transition: 0.25s;
 }
 
-input[type="text"]:hover, textarea:hover {
-    width: 260px;
-}
-
-input[type="submit"] {
-    border: 3px solid black;
-    outline: none;
-    background: none;
-    width: 100px;
-    padding: 3px;
-    border-radius: 20px;
-    transition: width 0.25s;
+#create-section form input[name="title"] {
     margin-bottom: 15px;
 }
 
-input[type="submit"]:hover {
+#create-section form textarea {
+    margin-bottom: 15px;
+    font-size: 15px;
+    resize: none;
+}
+
+#create-section form input[name="image-url"] {
+    margin-bottom: 30px;
+}
+
+#create-section form input[type="submit"] {
+    width: 37%;
+    padding: 7px;
+    margin-bottom: 25px;
+}
+
+#create-section form input[type="submit"]:hover {
+    font-weight: bold;
     cursor: pointer;
-    width: 110px;
-    background-color: black;
-    color: white;
+    width: 40%;
+    transition: 0.25s;
 }
