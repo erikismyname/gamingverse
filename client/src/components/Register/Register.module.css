@@ -1,57 +1,85 @@
-.register-form {
-    /* position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%); */
-    margin: 30px;
+#register-section form {
+    margin: auto;
     width: 20%;
-    height: 38%;
+    height: 415px;
     text-align: center;
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-.register-form-title {
-    text-transform: uppercase;
-}
-
-input[type="text"], input[type="password"] {
-    display: block;
-    border: 3px solid black;
-    outline: none;
-    background: none;
-    margin: 30px auto;
-    text-align: center;
-    padding: 10px;
-    width: 250px;
-    border-radius: 20px;
-    transition: width 0.25s;
-}
-
-input[type="text"]:hover, input[type="password"]:hover {
-    width: 260px;
-}
-
-input[type="submit"] {
-    border: 3px solid black;
-    outline: none;
-    background: none;
-    width: 100px;
-    padding: 3px;
-    border-radius: 20px;
-    transition: width 0.25s;
-    margin-bottom: 15px;
-}
-
-input[type="submit"]:hover {
-    cursor: pointer;
-    width: 110px;
-    background-color: black;
+#register-section form h1,
+#register-section form input[type="text"],
+#register-section form input[type="password"],
+#register-section form input[type="submit"],
+#register-section form p,
+#register-section form p a {
     color: white;
 }
 
-.register-form a {
-    color: lightskyblue;
+#register-section form h1 {
+    display: inline-block;
+    margin: 30px 0px;
+    text-transform: uppercase;
+}
+
+#register-section form input[type="text"],
+#register-section form input[type="password"],
+#register-section form input[type="submit"] {
+    display: block;
+    margin: auto;
+    background: none;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+}
+
+#register-section form input[type="text"],
+#register-section form input[type="password"] {
+    text-align: center;
+    width: 75%;
+    padding: 10px;
+}
+
+#register-section form input[type="text"]:hover,
+#register-section form input[type="password"]:hover {
+    font-weight: bold;
+    width: 78%;
+    transition: 0.25s;
+}
+
+#register-section form input[type="text"] {
+    margin-bottom: 15px;
+}
+
+#register-section form input[type="password"] {
+    margin-bottom: 15px;
+}
+
+#register-section form input[name="repeat-password"] {
+    margin-bottom: 30px;
+}
+
+#register-section form input[type="submit"] {
+    width: 37%;
+    padding: 7px;
+    margin-bottom: 25px;
+}
+
+#register-section form input[type="submit"]:hover {
+    font-weight: bold;
+    cursor: pointer;
+    width: 40%;
+    transition: 0.25s;
+}
+
+#register-section form a {
+    text-decoration: none;
+}
+
+#register-section form a:hover {
+    padding-bottom: 3px;
+    border-bottom: 2px solid white;
 }
