@@ -3,9 +3,10 @@ import styles from './Register.module.css';
 const Register = () => {
 
     return (
-        <section>
-            <form className={styles['register-form']}>
-                <h1 className={styles['register-form-title']}>Register</h1>
+        <section id={styles['register-section']}>
+            <form>
+                <h1>Register</h1>
+                <input type="text" name="email" placeholder="Email" />
                 <input type="text" name="username" placeholder="Username" />
                 <input type="password" name="password" placeholder="Password" />
                 <input type="password" name="repeat-password" placeholder="Repeat Password" />
