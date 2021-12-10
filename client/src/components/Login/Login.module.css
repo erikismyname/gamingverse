@@ -1,57 +1,82 @@
-.login-form {
-    /* position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%); */
-    margin: 30px;
+#login-section form {
+    margin: auto;
     width: 20%;
-    height: 30%;
+    height: 300px;
     text-align: center;
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-.login-form-title {
-    text-transform: uppercase;
-}
-
-input[type="text"], input[type="password"] {
-    display: block;
-    border: 3px solid black;
-    outline: none;
-    background: none;
-    margin: 30px auto;
-    text-align: center;
-    padding: 10px;
-    width: 250px;
-    border-radius: 20px;
-    transition: width 0.25s;
-}
-
-input[type="text"]:hover, input[type="password"]:hover {
-    width: 260px;
-}
-
-input[type="submit"] {
-    border: 3px solid black;
-    outline: none;
-    background: none;
-    width: 100px;
-    padding: 3px;
-    border-radius: 20px;
-    transition: width 0.25s;
-    margin-bottom: 15px;
-}
-
-input[type="submit"]:hover {
-    cursor: pointer;
-    width: 110px;
-    background-color: black;
+#login-section form h1,
+#login-section form input[type="text"],
+#login-section form input[type="password"],
+#login-section form input[type="submit"],
+#login-section form p,
+#login-section form p a {
     color: white;
 }
 
-.login-form a {
-    color: lightskyblue;
+#login-section form h1 {
+    display: inline-block;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+#login-section form input[type="text"],
+#login-section form input[type="password"],
+#login-section form input[type="submit"] {
+    display: block;
+    margin: auto;
+    background: none;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+}
+
+#login-section form input[type="text"],
+#login-section form input[type="password"] {
+    text-align: center;
+    width: 75%;
+    padding: 10px;
+}
+
+#login-section form input[type="text"]:hover,
+#login-section form input[type="password"]:hover {
+    font-weight: bold;
+    width: 78%;
+    transition: 0.25s;
+}
+
+#login-section form input[type="text"] {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+#login-section form input[type="password"] {
+    margin-bottom: 30px;
+}
+
+#login-section form input[type="submit"] {
+    width: 37%;
+    padding: 7px;
+    margin-bottom: 25px;
+}
+
+#login-section form input[type="submit"]:hover {
+    font-weight: bold;
+    cursor: pointer;
+    width: 40%;
+    transition: 0.25s;
+}
+
+#login-section form a {
+    text-decoration: none;
+}
+
+#login-section form a:hover {
+    padding-bottom: 3px;
+    border-bottom: 2px solid white;
 }
