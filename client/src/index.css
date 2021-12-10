@@ -7,7 +7,9 @@
 }
 
 body {
-    background-image: url(./image2.jpg);
+    background-image: url(./background.jpg);
     background-attachment: fixed;
+    background-size: cover;
+    background-position-x: center;
     font-family: Roboto, sans-serif;
 }
