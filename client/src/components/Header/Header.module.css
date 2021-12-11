@@ -1,38 +1,48 @@
-.header {
+#header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin: 10px;
 }
 
-.header a img {
+#header a img {
     border-radius: 10px;
-    transition: 0.50s;
+    transition-duration: 0.25s;
 }
 
-.header a img:hover {
+#header a img:hover {
+    margin-left: 8px;
     transform: scale(1.1); 
 }
 
-.header nav {
-    width: 85px;
+#header nav {
+    width: 30%;
 }
 
-.header nav ul li {
+#header nav ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#header nav ul li {
     list-style: none;
-    margin-bottom: 1px;
 }
 
-.header nav ul li a {
+#header nav ul li a {
     text-decoration: none;
     color: black;
     letter-spacing: 1.5px;
-    font-size: 18px;
+    font-size: 20px;
+    transition-duration: 0.25s;
 }
 
-.header ul li a:hover {
-    padding-left: 7px;
-    border-left: 3px solid;
-    transition: 0.50s;
+#header ul li a:hover {
+    color: white;
+    padding-bottom: 4px;
+    border-bottom: 2px solid white;
+}
+
+/* On nav item click */
+.active {
+    color: white;
 }
