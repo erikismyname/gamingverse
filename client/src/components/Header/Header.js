@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom';
 
 import styles from './Header.module.css';
 import img from '../../logo.png'
+
 const Header = () => {
 
     return (
-        <header className={styles.header}>
+        <header id={styles.header}>
             <a href="/"><img src={img} alt="" /></a>
             <nav>
                 <ul>
@@ -15,6 +16,7 @@ const Header = () => {
                         <li><a href="/register">Register</a></li>
                     </>
                     <>
+                        {/* <li><a href="">Welcome, username</a></li> */}
                         <li><a href="">Create</a></li>
                         <li><a href="">Profile</a></li>
                         <li><a href="">Logout</a></li>
