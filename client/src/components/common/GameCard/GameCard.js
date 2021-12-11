@@ -4,7 +4,7 @@ import demo from '../../../demo.jpg'
 const GameCard = () => {
 
     return (
-        <div className={styles['game-card']}>
+        <div id={styles['game-card']}>
             <img src={demo} alt="" />
             <div>
                 <p>Dead Space</p>
