@@ -1,6 +1,24 @@
-#wrapper {
+#catalog {
+    text-align: center;
+    margin: 50px auto;
     background-color: rgba(0, 0, 0, 0.7);
     width: 90%;
+    max-height: 675px;
     border-radius: 10px;
-    margin: auto;
+    /* border: 1px solid white; */
+    padding-top: 20px;
+    overflow: auto;
+}
+
+#catalog>p,
+#catalog>p>a {
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+}
+
+#catalog>p>a {
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 2px solid white;
 }
