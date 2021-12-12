@@ -3,8 +3,24 @@ import GameCard from '../common/GameCard/GameCard.js';
 
 const Catalog = () => {
 
+    const games = false;
+
+    const p = <p>There are no added games yet. Be the first to <a href="">create</a> one!</p>;
+
     return (
-        <div id={styles.wrapper}>
+        <div id={styles.catalog}>
+            <GameCard />
+            <GameCard />
+            <GameCard />
+            <GameCard />
+            <GameCard />
+            <GameCard />
+            <GameCard />
+            <GameCard />
+            <GameCard />
+            <GameCard />
+            <GameCard />
+            <GameCard />
             <GameCard />
         </div>
     );
