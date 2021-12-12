@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 10px;
+    height: 62px;
 }
 
 #header a img {
@@ -40,7 +41,7 @@
 #header ul li a:hover {
     color: white;
     padding-bottom: 4px;
-    border-bottom: 2px solid white;
+    border-bottom: 3px solid white;
 }
 
 /* On nav item click */
