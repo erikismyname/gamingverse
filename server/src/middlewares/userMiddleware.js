@@ -56,7 +56,7 @@ const generateToken = (userData) => jwt.sign({ _id: userData._id, username: user
 
 module.exports = () => (req, res, next) => {
 
-    const token = req.headers['X-Authorization'];
+    const token = req.headers['x-authorization'];
 
     try {
 
