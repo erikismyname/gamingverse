@@ -1,9 +1,13 @@
 const router = require('express').Router();
 const { body, validationResult } = require('express-validator');
 
+const {isGuest, isUser} = require('../middlewares/guardsMiddleware.js');
+
 router.post(
 
     '/register',
+
+    isGuest(),
 
     body('email')
         .trim()
@@ -64,6 +68,8 @@ router.post(
 
         } catch (err) {
 
+            console.log(err.message);
+
             let error;
 
             let statusCode;
@@ -92,7 +98,7 @@ router.post(
 
 );
 
-router.post('/login', async (req, res) => {
+router.post('/login', isGuest(), async (req, res) => {
 
     try {
 
@@ -107,6 +113,8 @@ router.post('/login', async (req, res) => {
 
     } catch (err) {
 
+        console.log(err.message);
+
         res
             .status(400)
             .json({ message: err.message });
@@ -115,7 +123,7 @@ router.post('/login', async (req, res) => {
 
 });
 
-router.get('/logout', (req, res) => {
+router.get('/logout', isUser(), (req, res) => {
 
     res
         .status(204)
