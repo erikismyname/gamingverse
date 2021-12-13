@@ -7,10 +7,6 @@ const userSchema = new Schema({
     username: String,
 
     hashedPassword: String,
-
-    offeredGames: [{ type: Schema.Types.ObjectId, ref: 'Game' }],
-
-    orderedGames: [{ type: Schema.Types.ObjectId, ref: 'Game' }],
     
 });
 
