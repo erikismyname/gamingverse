@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const { body, validationResult } = require('express-validator');
 
+const { isUser, isOwner } = require('../middlewares/guardsMiddleware.js');
+const preloadGame = require('../middlewares/preloadGameMiddleware.js');
+
 router.get('/', async (req, res) => {
 
     try {
@@ -10,6 +13,8 @@ router.get('/', async (req, res) => {
         res.json(games);
 
     } catch (err) {
+
+        console.log(err.message);
 
         res
             .status(400)
@@ -23,11 +28,35 @@ router.get('/:gameId', async (req, res) => {
 
     try {
 
-        const game = await req.games.getOne(req.params.gameId);
+        const game = await req.games.getOneById(req.params.gameId);
 
         res.json(game);
 
     } catch (err) {
+
+        console.log(err.message);
+
+        res
+            .status(400)
+            .json({ message: err.message });
+
+    }
+
+});
+
+router.get('\\?where=_ownerId=:userId', isUser(), async (req, res) => {
+
+    console.log(req.params.userId);
+
+    try {
+
+        const ownGames = await req.games.getOwn(req.user._id);
+
+        res.json(ownGames);
+
+    } catch (err) {
+
+        console.log(err.message);
 
         res
             .status(400)
@@ -41,35 +70,37 @@ router.post(
 
     '/',
 
+    isUser(),
+
     body('title')
-        .escape()
         .trim()
         .notEmpty()
         .withMessage('Title is required!')
         .bail()
         .isLength({ min: 3, max: 15 })
-        .withMessage('Title must be between 3 and 15 characters long!'),
+        .withMessage('Title must be between 3 and 15 characters long!')
+        .bail()
+        .escape(),
 
     body('description')
-        .escape()
         .trim()
         .notEmpty()
         .withMessage('Description is required!')
         .bail()
         .isLength({ min: 10, max: 300 })
-        .withMessage('Description must be between 10 and 300 characters long!'),
+        .withMessage('Description must be between 10 and 300 characters long!')
+        .bail()
+        .escape(),
 
-    body('imageURL')
+    body('image-url')
         .trim()
         .notEmpty()
         .withMessage('Image URL is required!')
         .bail()
         .isURL({ require_protocol: true })
-        .withMessage('Image URL must be a valid one!'),
-
-    body('count')
-        .isInt({ min: 1, max: 10 })
-        .withMessage('Count must be between 1 and 10!'),
+        .withMessage('Image URL must be a valid one!')
+        .bail()
+        .escape(),
 
     async (req, res) => {
 
@@ -89,12 +120,17 @@ router.post(
 
             }
 
+            const gameTitle = req.body.title;
+
+            const existingGame = await req.games.getOneByTitle(gameTitle);
+
+            if (existingGame) throw new Error('A game with such title already exists!');
+
             const gameData = {
-                title: req.body.title,
+                title: gameTitle,
                 description: req.body.description,
-                imageURL: req.body.imageURL,
-                count: Number(req.body.count),
-                // owner: req.user._id,
+                imageURL: req.body['image-url'],
+                owner: req.user._id,
             };
 
             const newGame = await req.games.create(gameData);
@@ -105,10 +141,28 @@ router.post(
 
         } catch (err) {
 
-            const error = err.type == 'Validation' ? errors : err.message;
+            console.log(err.message);
+
+            let error;
+
+            let statusCode;
+
+            if (err.type == 'Validation') {
+
+                error = errors;
+
+                statusCode = 400;
+
+            } else {
+
+                error = err.message;
+
+                statusCode = 409;
+
+            }
 
             res
-                .status(400)
+                .status(statusCode)
                 .json({ message: error });
 
         }
@@ -121,35 +175,41 @@ router.put(
 
     '/:gameId',
 
+    isUser(),
+
+    preloadGame(),
+
+    isOwner(),
+
     body('title')
-        .escape()
         .trim()
         .notEmpty()
         .withMessage('Title is required!')
         .bail()
         .isLength({ min: 3, max: 15 })
-        .withMessage('Title must be between 3 and 15 characters long!'),
+        .withMessage('Title must be between 3 and 15 characters long!')
+        .bail()
+        .escape(),
 
     body('description')
-        .escape()
         .trim()
         .notEmpty()
         .withMessage('Description is required!')
         .bail()
         .isLength({ min: 10, max: 300 })
-        .withMessage('Description must be between 10 and 300 characters long!'),
+        .withMessage('Description must be between 10 and 300 characters long!')
+        .bail()
+        .escape(),
 
-    body('imageURL')
+    body('image-url')
         .trim()
         .notEmpty()
         .withMessage('Image URL is required!')
         .bail()
         .isURL({ require_protocol: true })
-        .withMessage('Image URL must be a valid one!'),
-
-    body('count')
-        .isInt({ min: 1, max: 10 })
-        .withMessage('Count must be between 1 and 10!'),
+        .withMessage('Image URL must be a valid one!')
+        .bail()
+        .escape(),
 
     async (req, res) => {
 
@@ -172,24 +232,41 @@ router.put(
             const gameData = {
                 title: req.body.title,
                 description: req.body.description,
-                imageURL: req.body.imageURL,
-                count: Number(req.body.count),
+                imageURL: req.body['image-url'],
             };
 
             const gameId = req.params.gameId;
 
             await req.games.update(gameId, gameData);
 
-            const updatedGame = await req.games.getOne(gameId);
+            const updatedGame = await req.games.getOneById(gameId);
 
-            console.log(updatedGame);
+            res.json(updatedGame);
 
         } catch (err) {
 
-            const error = err.type == 'Validation' ? errors : err.message;
+            console.log(err.message);
+
+            let error;
+
+            let statusCode;
+
+            if (err.type == 'Validation') {
+
+                error = errors;
+
+                statusCode = 400;
+
+            } else {
+
+                error = err.message;
+
+                statusCode = 409;
+
+            }
 
             res
-                .status(400)
+                .status(statusCode)
                 .json({ message: error });
 
         }
@@ -198,7 +275,7 @@ router.put(
 
 );
 
-router.delete('/:gameId', async (req, res) => {
+router.delete('/:gameId', isUser(), preloadGame(), isOwner(), async (req, res) => {
 
     try {
 
