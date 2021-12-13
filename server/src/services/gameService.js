@@ -6,7 +6,7 @@ const getOneById = async (gameId) => Game.findById(gameId);
 
 const getOneByTitle = async (gameTitle) => Game.findOne({ title: { $regex: `^${gameTitle}$` } });
 
-const getOwn = async (userId) => Games.find({ owner: userId });
+const getOwn = async (userId) => Game.find({ owner: userId });
 
 const create = async (gameData) => Game.create(gameData);
 
