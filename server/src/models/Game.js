@@ -8,11 +8,9 @@ const gameSchema = new Schema({
 
     imageURL: String,
 
-    count: Number,
-
     owner: { type: Schema.Types.ObjectId, ref: 'User' },
 
-    orderedBy: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    likes: [{ type: Schema.Types.ObjectId, ref: 'User' }],
 
 });
 
