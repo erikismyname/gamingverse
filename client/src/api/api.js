@@ -23,3 +23,26 @@ const request = async (url, options) => {
     }
 
 };
+
+const getRequestOptions = (method = 'GET', body) => {
+
+    const options = {
+        method,
+        headers: {},
+    };
+
+    const token = sessionStorage.getItem('token');
+
+    if (token) options.headers['X-Authorization'] = token;
+
+    if (body) {
+
+        options.headers['Content-Type'] = 'application/json';
+
+        options.body = JSON.stringify(body);
+
+    }
+
+    return options;
+
+};
