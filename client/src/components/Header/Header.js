@@ -1,26 +1,28 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import styles from './Header.module.css';
-import img from '../../logo.png'
+import logo from '../../logo.png'
+
+import GuestNav from './GuestNav/GuestNav.js';
+import UserNav from './UserNav/UserNav.js';
+
+import useUserContext from '../../hooks/useUserContext.js';
 
 const Header = () => {
 
+    const { validateUser } = useUserContext();
+
+    const user = validateUser();
+
     return (
         <header id={styles.header}>
-            <a href="/"><img src={img} alt="" /></a>
+            <NavLink to="/" exact><img src={logo} alt="Site logo." /></NavLink>
             <nav>
                 <ul>
-                    <li><a href="">Catalog</a></li>
-                    <>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Register</a></li>
-                    </>
-                    <>
-                        {/* <li><a href="">Welcome, username</a></li> */}
-                        <li><a href="">Create</a></li>
-                        <li><a href="">Profile</a></li>
-                        <li><a href="">Logout</a></li>
-                    </>
+                    <li><NavLink to="/catalog">Catalog</NavLink></li>
+
+                    {user ? <UserNav /> : <GuestNav />}
+
                 </ul>
             </nav>
         </header>
