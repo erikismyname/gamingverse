@@ -1,17 +1,47 @@
+import { Link } from 'react-router-dom';
+
 import styles from './Register.module.css';
 
-const Register = () => {
+import useUserContext from '../../hooks/useUserContext.js';
+import handleRegisterInput from '../../util/registerFormValidator.js';
+import { registerUser } from '../../services/userService.js';
+
+const Register = ({ history }) => {
+
+    const { addUser } = useUserContext();
+
+    const onRegisterFormSubmitHandler = async (ev) => {
+
+        ev.preventDefault();
+
+        try {
+
+            const userData = handleRegisterInput(new FormData(ev.target));
+
+            const user = await registerUser(userData);
+
+            addUser(user);
+
+            history.push('/');
+
+        } catch (err) {
+
+            alert(err.message);
+
+        }
+
+    };
 
     return (
         <section id={styles['register-section']}>
-            <form>
+            <form onSubmit={onRegisterFormSubmitHandler}>
                 <h1>Register</h1>
                 <input type="text" name="email" placeholder="Email" />
                 <input type="text" name="username" placeholder="Username" />
                 <input type="password" name="password" placeholder="Password" />
                 <input type="password" name="repeat-password" placeholder="Repeat Password" />
                 <input type="submit" value="Register" />
-                <p>Already have an account? <a href="">Sign in.</a></p>
+                <p>Already have an account? <Link to="/login">Sign in.</Link></p>
             </form>
         </section>
     );
