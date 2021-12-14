@@ -44,28 +44,6 @@ router.get('/:gameId', async (req, res) => {
 
 });
 
-router.get('\\?where=_ownerId=:userId', isUser(), async (req, res) => {
-
-    console.log(req.params.userId);
-
-    try {
-
-        const ownGames = await req.games.getOwn(req.user._id);
-
-        res.json(ownGames);
-
-    } catch (err) {
-
-        console.log(err.message);
-
-        res
-            .status(400)
-            .json({ message: err.message });
-
-    }
-
-});
-
 router.post(
 
     '/',
