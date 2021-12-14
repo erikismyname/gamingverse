@@ -1,24 +1,56 @@
+import { Switch, Route } from 'react-router-dom';
+
+import { UserProvider } from './contexts/UserContext.js';
+
 import './App.css';
 
 import Header from './components/Header/Header.js';
-// import Footer from './components/Footer/Footer.js';
-// import Home from './components/Home/Home.js';
+import Home from './components/Home/Home.js';
 import Login from './components/Login/Login.js';
 import Register from './components/Register/Register.js';
 import Create from './components/Create/Create.js';
+import Footer from './components/Footer/Footer.js';
 import Edit from './components/Edit/Edit.js';
 import GameCard from './components/common/GameCard/GameCard.js';
+import Catalog from './components/Catalog/Catalog.js';
+import Error from './components/Error/Error.js';
+import Details from './components/Details/Details.js';
+import Profile from './components/Profile/Profile.js';
+import Dialog from './components/Dialog/Dialog.js';
 
 function App() {
 
     return (
         <>
-            <Header />
-            <GameCard />
-            <Login />
-            <Register />
-            <Create />
-            <Edit />
+
+            <UserProvider>
+
+                <Header />
+
+                <Switch>
+
+                    <Route path="/" exact component={Home} />
+
+                    <Route path="/catalog" component={Catalog} />
+
+                    <Route path="/login" component={Login} />
+
+                    <Route path="/register" component={Register} />
+
+                    <Route path="/create" component={Create} />
+
+                    <Route path="/details/:gameId" component={Details} />
+
+                    <Route path="/edit/:gameId" component={Edit} />
+
+                    <Route path="/profile" component={Profile} />
+
+                </Switch>
+
+            </UserProvider>
+
+            <Footer />
+
         </>
     );
 

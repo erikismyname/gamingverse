@@ -5,7 +5,7 @@ const Details = () => {
 
     return (
         <section id={styles['details-section']}>
-            <img src={img} alt="" />
+                <img src={img} alt="" />
             <div>
                 <div>
                     <h2>Dead Space</h2>
