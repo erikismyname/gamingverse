@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Register.module.css';
 
 import useUserContext from '../../hooks/useUserContext.js';
-import handleRegisterInput from '../../util/registerFormValidator.js';
+import handleRegisterInput from '../../util/handleRegisterInput.js';
 import { registerUser } from '../../services/userService.js';
 
 const Register = ({ history }) => {
