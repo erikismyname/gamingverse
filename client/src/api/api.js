@@ -54,3 +54,5 @@ const postRequest = async (url, body) => request(url, getRequestOptions('POST', 
 const putRequest = async (url, body) => request(url, getRequestOptions('PUT', body));
 
 const deleteRequest = async (url) => request(url, getRequestOptions('DELETE'));
+
+export { getRequest, postRequest, putRequest, deleteRequest };
