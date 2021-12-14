@@ -6,7 +6,9 @@ const request = async (url, options) => {
 
         const error = await response.json();
 
-        throw new Error(err.message);
+        const errorMsg = Array.isArray(error.message) ? error.message.join('\n') : error.message;
+
+        throw new Error(errorMsg);
 
     }
 
