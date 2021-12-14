@@ -33,9 +33,9 @@ const getRequestOptions = (method = 'GET', body) => {
         headers: {},
     };
 
-    const token = sessionStorage.getItem('token');
+    const user = JSON.parse(sessionStorage.getItem('user'));
 
-    if (token) options.headers['X-Authorization'] = token;
+    if (user) options.headers['X-Authorization'] = user.token;
 
     if (body) {
 
