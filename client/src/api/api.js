@@ -46,3 +46,11 @@ const getRequestOptions = (method = 'GET', body) => {
     return options;
 
 };
+
+const getRequest = async (url) => request(url, getRequestOptions());
+
+const postRequest = async (url, body) => request(url, getRequestOptions('POST', body));
+
+const putRequest = async (url, body) => request(url, getRequestOptions('PUT', body));
+
+const deleteRequest = async (url) => request(url, getRequestOptions('DELETE'));
