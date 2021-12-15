@@ -65,8 +65,8 @@ router.post(
         .notEmpty()
         .withMessage('Description is required!')
         .bail()
-        .isLength({ min: 10, max: 300 })
-        .withMessage('Description must be between 10 and 300 characters long!')
+        .isLength({ min: 10, max: 400 })
+        .withMessage('Description must be between 10 and 400 characters long!')
         .bail()
         .escape(),
 
@@ -76,9 +76,7 @@ router.post(
         .withMessage('Image URL is required!')
         .bail()
         .isURL({ require_protocol: true })
-        .withMessage('Image URL must be a valid one!')
-        .bail()
-        .escape(),
+        .withMessage('Image URL must be a valid one!'),
 
     async (req, res) => {
 
@@ -174,8 +172,8 @@ router.put(
         .notEmpty()
         .withMessage('Description is required!')
         .bail()
-        .isLength({ min: 10, max: 300 })
-        .withMessage('Description must be between 10 and 300 characters long!')
+        .isLength({ min: 10, max: 400 })
+        .withMessage('Description must be between 10 and 400 characters long!')
         .bail()
         .escape(),
 
@@ -185,9 +183,7 @@ router.put(
         .withMessage('Image URL is required!')
         .bail()
         .isURL({ require_protocol: true })
-        .withMessage('Image URL must be a valid one!')
-        .bail()
-        .escape(),
+        .withMessage('Image URL must be a valid one!'),
 
     async (req, res) => {
 
