@@ -1,14 +1,13 @@
 import styles from './GameCard.module.css';
-import demo from '../../../demo.jpg'
 
-const GameCard = () => {
+const GameCard = ({ game }) => {
 
     return (
         <div id={styles['game-card']}>
-            <img src={demo} alt="" />
+            <img src={game.imageURL} alt="Game photo." />
             <div>
-                <p>Dead Space</p>
-                <a href="">Details</a>
+                <p>{game.title}</p>
+                <a href={`/details/${game._id}`}>Details</a>
             </div>
         </div>
     );
