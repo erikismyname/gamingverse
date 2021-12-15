@@ -71,11 +71,16 @@
     transition: 0.25s;
 }
 
-#login-section form a {
+#login-section form p a {
     text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 3px;
+    border-radius: 10px;
 }
 
-#login-section form a:hover {
+/* #login-section form p a:hover {
     padding-bottom: 3px;
     border-bottom: 2px solid white;
-}
+
+} */
