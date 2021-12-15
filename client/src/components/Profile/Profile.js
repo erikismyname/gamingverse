@@ -9,9 +9,6 @@ const Profile = () => {
 
     return (
         <div id={styles.profile}>
-            <GameCard />
-            <GameCard />
-            <GameCard />
         </div>
     );
 
