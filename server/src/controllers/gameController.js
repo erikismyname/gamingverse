@@ -70,7 +70,7 @@ router.post(
         .bail()
         .escape(),
 
-    body('image-url')
+    body('imageURL')
         .trim()
         .notEmpty()
         .withMessage('Image URL is required!')
@@ -105,7 +105,7 @@ router.post(
             const gameData = {
                 title: gameTitle,
                 description: req.body.description,
-                imageURL: req.body['image-url'],
+                imageURL: req.body.imageURL,
                 owner: req.user._id,
             };
 
@@ -177,7 +177,7 @@ router.put(
         .bail()
         .escape(),
 
-    body('image-url')
+    body('imageURL')
         .trim()
         .notEmpty()
         .withMessage('Image URL is required!')
@@ -206,7 +206,7 @@ router.put(
             const gameData = {
                 title: req.body.title,
                 description: req.body.description,
-                imageURL: req.body['image-url'],
+                imageURL: req.body.imageURL,
             };
 
             const gameId = req.params.gameId;
