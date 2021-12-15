@@ -31,11 +31,10 @@
     transition-duration: 0.25s;
 }
 
-#header nav ul li a:hover {
-    color: white;
-    font-size: 22px;
-}
-
+#header nav ul li a:hover,
 #header nav ul li a[class="active"] {
     color: white;
+    background-color: black;
+    padding: 5px 7px;
+    border-radius: 10px;
 }
