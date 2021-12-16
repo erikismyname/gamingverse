@@ -7,6 +7,6 @@ const loginUser = async (userData) => postRequest(`${API_ENDPOINTS.user}/login`,
 
 const logoutUser = async () => getRequest(`${API_ENDPOINTS.user}/logout`);
 
-const getOwnGames = async (userId) => getRequest(`${API_ENDPOINTS.user}/${userId}/games`);
+const getMyGames = async (userId) => getRequest(`${API_ENDPOINTS.user}/${userId}/games`);
 
-export { registerUser, loginUser, logoutUser, getOwnGames };
+export { registerUser, loginUser, logoutUser, getMyGames };
