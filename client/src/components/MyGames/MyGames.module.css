@@ -1,4 +1,4 @@
-#profile {
+#my-games {
     text-align: center;
     margin: 50px auto;
     background-color: rgba(0, 0, 0, 0.7);
@@ -11,14 +11,14 @@
     overflow: auto;
 }
 
-#profile>p,
-#profile>p>a {
+#my-games>p,
+#my-games>p>a {
     color: white;
     font-size: 20px;
     letter-spacing: 1.5px;
 }
 
-#profile>p>a {
+#my-games>p>a {
     text-decoration: none;
     padding-bottom: 1px;
     border-bottom: 2px solid white;
