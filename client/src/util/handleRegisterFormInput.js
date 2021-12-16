@@ -8,7 +8,7 @@ const handleRegisterFormInput = (formData) => {
 
     const rePass = formData.get('repeat-password').trim();
 
-    if (!email || !username || !password || !rePass) {
+    if (!email || !username || !password) {
 
         throw new Error('All fields are required!');
 
