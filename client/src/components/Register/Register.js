@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import styles from './Register.module.css';
 
 import useUserContext from '../../hooks/useUserContext.js';
-import handleRegisterInput from '../../util/handleRegisterInput.js';
+
+import handleRegisterFormInput from '../../util/handleRegisterFormInput.js';
+
 import { registerUser } from '../../services/userService.js';
 
 const Register = ({ history }) => {
@@ -16,17 +18,17 @@ const Register = ({ history }) => {
 
         try {
 
-            const userData = handleRegisterInput(new FormData(ev.target));
+            const userData = handleRegisterFormInput(new FormData(ev.target));
 
             const user = await registerUser(userData);
 
             addUser(user);
 
-            history.push('/');
+            history.push('/catalog');
 
         } catch (err) {
 
-            alert(err.message);
+            alert(err);
 
         }
 
