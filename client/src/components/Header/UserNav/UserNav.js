@@ -1,6 +1,7 @@
 import { NavLink, useHistory } from 'react-router-dom';
 
 import useUserContext from '../../../hooks/useUserContext.js';
+
 import { logoutUser } from '../../../services/userService.js';
 
 const UserNav = () => {
@@ -13,18 +14,26 @@ const UserNav = () => {
 
         ev.preventDefault();
 
-        await logoutUser();
+        try {
 
-        removeUser();
+            await logoutUser();
 
-        history.push('/');
+            removeUser();
+
+            history.push('/');
+
+        } catch (err) {
+
+            alert(err);
+
+        }
 
     };
 
     return (
         <>
             <li><NavLink to="/create">Create</NavLink></li>
-            <li><NavLink to="/profile">Profile</NavLink></li>
+            <li><NavLink to="/my-games">My Games</NavLink></li>
             <li><NavLink to="/logout" onClick={onLogoutBtnClickHandler}>Logout</NavLink></li>
         </>
     );
