@@ -1,4 +1,4 @@
-const handleRegisterInput = (formData) => {
+const handleRegisterFormInput = (formData) => {
 
     const email = formData.get('email').trim();
 
@@ -22,4 +22,4 @@ const handleRegisterInput = (formData) => {
 
 };
 
-export default handleRegisterInput;
+export default handleRegisterFormInput;

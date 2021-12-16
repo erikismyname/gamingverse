@@ -1,4 +1,4 @@
-const handleLoginInput = (formData) => {
+const handleLoginFormInput = (formData) => {
 
     const username = formData.get('username').trim();
 
@@ -10,4 +10,4 @@ const handleLoginInput = (formData) => {
 
 };
 
-export default handleLoginInput;
+export default handleLoginFormInput;
