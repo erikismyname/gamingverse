@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import styles from './Catalog.module.css';
 
 import { getAllGames } from '../../services/gameService.js';
+
 import GameCard from '../common/GameCard/GameCard.js';
 
 const Catalog = () => {
