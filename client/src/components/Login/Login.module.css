@@ -1,7 +1,7 @@
 #login-section form {
-    margin: auto;
+    margin: 100px auto;
     width: 20%;
-    height: 300px;
+    height: 305px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
@@ -12,8 +12,7 @@
 #login-section form input[type="text"],
 #login-section form input[type="password"],
 #login-section form input[type="submit"],
-#login-section form p,
-#login-section form p a {
+#login-section form p {
     color: white;
 }
 
@@ -32,8 +31,14 @@
     outline: none;
     border: 2px solid white;
     border-radius: 10px;
-    letter-spacing: 1.5px;
     font-size: 14px;
+}
+
+#login-section form h1,
+#login-section form input[type="text"],
+#login-section form input[type="password"],
+#login-section form input[type="submit"] {
+    letter-spacing: 1.5px;
 }
 
 #login-section form input[type="text"],
@@ -45,7 +50,6 @@
 
 #login-section form input[type="text"]:hover,
 #login-section form input[type="password"]:hover {
-    font-weight: bold;
     width: 78%;
     transition: 0.25s;
 }
@@ -65,10 +69,13 @@
 }
 
 #login-section form input[type="submit"]:hover {
-    font-weight: bold;
     cursor: pointer;
     width: 40%;
     transition: 0.25s;
+}
+
+#login-section form p {
+    letter-spacing: 1px;
 }
 
 #login-section form p a {
