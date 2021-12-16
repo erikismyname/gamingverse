@@ -1,7 +1,7 @@
 #edit-section form {
-    margin: auto;
-    width: 20%;
-    height: 350px;
+    margin: 100px auto;
+    width: 25%;
+    height: 400px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
@@ -26,31 +26,29 @@
 #edit-section form input[type="submit"] {
     display: block;
     margin: auto;
+    text-align: center;
     background: none;
     outline: none;
     border: 2px solid white;
     border-radius: 10px;
-    letter-spacing: 1.5px;
 }
 
 #edit-section form input[type="text"],
 #edit-section form input[type="submit"] {
     font-size: 14px;
+    letter-spacing: 1.5px;
 }
-
 
 #edit-section form input[type="text"],
 #edit-section form textarea {
-    text-align: center;
     width: 75%;
     padding: 10px;
 }
 
 #edit-section form input[type="text"]:hover,
 #edit-section form textarea:hover {
-    font-weight: bold;
     width: 78%;
-    transition: 0.25s;
+    transition-duration: 0.25s;
 }
 
 #edit-section form input[name="title"] {
@@ -59,7 +57,9 @@
 
 #edit-section form textarea {
     margin-bottom: 15px;
-    font-size: 15px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    height: 110px;
     resize: none;
 }
 
@@ -74,7 +74,6 @@
 }
 
 #edit-section form input[type="submit"]:hover {
-    font-weight: bold;
     cursor: pointer;
     width: 40%;
     transition: 0.25s;
