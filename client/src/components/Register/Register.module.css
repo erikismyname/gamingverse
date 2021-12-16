@@ -1,7 +1,7 @@
 #register-section form {
-    margin: auto;
+    margin: 80px auto;
     width: 20%;
-    height: 415px;
+    height: 418px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
@@ -12,9 +12,15 @@
 #register-section form input[type="text"],
 #register-section form input[type="password"],
 #register-section form input[type="submit"],
-#register-section form p,
-#register-section form p a {
+#register-section form p {
     color: white;
+}
+
+#register-section form h1,
+#register-section form input[type="text"],
+#register-section form input[type="password"],
+#register-section form input[type="submit"] {
+    letter-spacing: 1.5px;
 }
 
 #register-section form h1 {
@@ -32,7 +38,6 @@
     outline: none;
     border: 2px solid white;
     border-radius: 10px;
-    letter-spacing: 1.5px;
     font-size: 14px;
 }
 
@@ -45,7 +50,6 @@
 
 #register-section form input[type="text"]:hover,
 #register-section form input[type="password"]:hover {
-    font-weight: bold;
     width: 78%;
     transition: 0.25s;
 }
@@ -69,10 +73,13 @@
 }
 
 #register-section form input[type="submit"]:hover {
-    font-weight: bold;
     cursor: pointer;
     width: 40%;
     transition: 0.25s;
+}
+
+#register-section form p {
+    letter-spacing: 0.5px;
 }
 
 #register-section form p a {
