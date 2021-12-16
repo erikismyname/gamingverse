@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 import logo from '../../logo.png'
 
+import useUserContext from '../../hooks/useUserContext.js';
+
 import UserNav from './UserNav/UserNav.js';
 import GuestNav from './GuestNav/GuestNav.js';
-
-import useUserContext from '../../hooks/useUserContext.js';
 
 const Header = () => {
 
