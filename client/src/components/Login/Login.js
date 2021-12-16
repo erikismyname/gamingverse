@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import styles from './Login.module.css';
 
 import useUserContext from '../../hooks/useUserContext.js';
-import handleLoginInput from '../../util/handleLoginInput.js';
+
+import handleLoginFormInput from '../../util/handleLoginFormInput.js';
+
 import { loginUser } from '../../services/userService.js';
 
 const Login = ({ history }) => {
@@ -16,17 +18,17 @@ const Login = ({ history }) => {
 
         try {
 
-            const userData = handleLoginInput(new FormData(ev.target));
+            const userData = handleLoginFormInput(new FormData(ev.target));
 
             const user = await loginUser(userData);
 
             addUser(user);
 
-            history.push('/');
+            history.push('/catalog');
 
         } catch (err) {
 
-            alert(err.message);
+            alert(err);
 
         }
 
