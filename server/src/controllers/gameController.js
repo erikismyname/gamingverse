@@ -269,4 +269,40 @@ router.delete('/:gameId', isUser(), preloadGame(), isOwner(), async (req, res) =
 
 });
 
+router.post('/:gameId/like', isUser(), async (req, res) => {
+
+    try {
+
+        await req.games.like(req.params.gameId, req.user._id);
+
+        res
+            .status(204)
+            .end();
+
+    } catch (err) {
+
+        console.log(err.message);
+
+    }
+
+});
+
+router.post('/:gameId/dislike', isUser(), async (req, res) => {
+
+    try {
+
+        await req.games.dislike(req.params.gameId, req.user._id);
+
+        res
+            .status(204)
+            .end();
+
+    } catch (err) {
+
+        console.log(err.message);
+
+    }
+
+});
+
 module.exports = router;
