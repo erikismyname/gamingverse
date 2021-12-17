@@ -11,4 +11,8 @@ const updateGame = async (gameId, gameData) => api.putRequest(`${API_ENDPOINTS.g
 
 const deleteGame = async (gameId) => api.deleteRequest(`${API_ENDPOINTS.games}/${gameId}`);
 
-export { getAllGames, getGameById, createGame, updateGame, deleteGame };
+const likeGame = async (gameId) => api.postRequest(`${API_ENDPOINTS.games}/${gameId}/like`);
+
+const dislikeGame = async (gameId) => api.postRequest(`${API_ENDPOINTS.games}/${gameId}/dislike`);
+
+export { getAllGames, getGameById, createGame, updateGame, deleteGame, likeGame, dislikeGame };
