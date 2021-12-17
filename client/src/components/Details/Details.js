@@ -1,23 +1,62 @@
-import styles from './Details.module.css';
-import img from '../../demo.jpg';
+import { useState, useEffect } from 'react';
 
-const Details = () => {
+import { getGameById } from '../../services/gameService.js';
+
+import styles from './Details.module.css';
+
+import OwnerActions from './OwnerActions/OwnerActions.js';
+import LikeActions from './LikeActions/LikeActions.js';
+
+const Details = ({ match }) => {
+
+    const gameId = match.params.gameId;
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    const [game, setGame] = useState({});
+
+    useEffect(() => {
+
+        getGameById(gameId)
+            .then(game => {
+                setIsLoading(false);
+                setGame(game);
+            })
+            .catch(err => alert(err));
+
+    }, [gameId]);
+
+    const likeActionCb = (userId, type='like') =>
+        setGame(oldGame => ({ ...oldGame, likes: type == 'like' ? [...game.likes, userId] : game.likes.filter(id => id != userId) }));
+
+    const detailsView = (
+        <>
+            <img src={game.imageURL} alt="Game cover." />
+            <div>
+                <div>
+                    <h2>{game.title}</h2>
+                    <p>{game.description}</p>
+                    <p>{game.likes?.length} {game.likes?.length == 1 ? 'person likes' : 'people like'} this game</p>
+                </div>
+                <div>
+
+                    <OwnerActions game={game} />
+
+                    <LikeActions game={game} likeActionCb={likeActionCb} />
+
+                </div>
+            </div>
+        </>
+    );
 
     return (
         <section id={styles['details-section']}>
-                <img src={img} alt="" />
-            <div>
-                <div>
-                    <h2>Dead Space</h2>
-                    <p>A massive deep-space mining ship goes dark after unearthing a strange artifact on a distant planet. Engineer Isaac Clarke embarks on the repair mission, only to uncover a nightmarish blood bath — the ship's crew horribly slaughtered and infected by alien scourge.</p>
-                </div>
-                <div>
-                    <a href="">Edit</a>
-                    <a href="">Delete</a>
-                    <a href="">Like</a>
-                    <a href="">Dislike</a>
-                </div>
-            </div>
+
+            {isLoading
+                ? <div id="loader"></div>
+                : detailsView
+            }
+
         </section>
     );
 
