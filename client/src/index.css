@@ -14,3 +14,21 @@ body {
     background-position-x: center;
     font-family: Roboto, sans-serif;
 }
+
+#loader::before {
+    content: '';
+    box-sizing: border-box;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    /* border: 3px solid white; */
+    border-top: 2px solid white;
+    border-right: 2px solid transparent;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
