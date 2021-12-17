@@ -14,4 +14,24 @@ const update = async (gameId, gameData) => Game.findByIdAndUpdate(gameId, gameDa
 
 const remove = async (gameId) => Game.findByIdAndDelete(gameId);
 
-module.exports = { getAll, getOneById, getOneByTitle, getOwn, create, update, remove };
+const like = async (gameId, userId) => {
+
+    const game = await Game.findById(gameId);
+
+    game.likes.push(userId);
+
+    await game.save();
+
+};
+
+const dislike = async (gameId, userId) => {
+
+    const game = await Game.findById(gameId);
+
+    game.likes.splice(game.likes.indexOf(userId), 1);
+
+    await game.save();
+
+};
+
+module.exports = { getAll, getOneById, getOneByTitle, getOwn, create, update, remove, like, dislike };
