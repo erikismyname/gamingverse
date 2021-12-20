@@ -6,7 +6,7 @@ const GameCard = ({ game }) => {
 
     return (
         <div id={styles['game-card']}>
-            <img src={game.imageURL} alt="Game's cover photo." />
+            <img src={game.imageURL} alt="Game's cover" />
             <div>
                 <p>{game.title}</p>
                 <Link to={`/details/${game._id}`}>Details</Link>
