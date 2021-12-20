@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-
-import { getGameById } from '../../services/gameService.js';
+import { toast } from 'react-toastify';
 
 import styles from './Details.module.css';
 
 import OwnerActions from './OwnerActions/OwnerActions.js';
 import LikeActions from './LikeActions/LikeActions.js';
+
+import { getGameById } from '../../services/gameService.js';
 
 const Details = ({ match }) => {
 
@@ -22,21 +23,24 @@ const Details = ({ match }) => {
                 setIsLoading(false);
                 setGame(game);
             })
-            .catch(err => alert(err));
+            .catch(err => toast(err.message));
 
     }, [gameId]);
 
-    const likeActionCb = (userId, type='like') =>
+    const likeActionCb = (userId, type = 'like') =>
         setGame(oldGame => ({ ...oldGame, likes: type == 'like' ? [...game.likes, userId] : game.likes.filter(id => id != userId) }));
 
     const detailsView = (
         <>
-            <img src={game.imageURL} alt="Game cover." />
-            <div>
+            <div className={styles['first-wrapper']}>
+                <img src={game.imageURL} alt="Game cover." />
+                <p>{game.likes?.length} {game.likes?.length == 1 ? 'person likes' : 'people like'} this game</p>
+            </div>
+            <div className={styles['second-wrapper']}>
                 <div>
                     <h2>{game.title}</h2>
                     <p>{game.description}</p>
-                    <p>{game.likes?.length} {game.likes?.length == 1 ? 'person likes' : 'people like'} this game</p>
+
                 </div>
                 <div>
 
@@ -50,7 +54,7 @@ const Details = ({ match }) => {
     );
 
     return (
-        <section id={styles['details-section']}>
+        <section id={styles.details}>
 
             {isLoading
                 ? <div id="loader"></div>
