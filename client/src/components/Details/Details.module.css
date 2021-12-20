@@ -1,44 +1,62 @@
-#details-section {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-    margin: 50px auto;
+#details {
+    color: white;
+    width: 60%;
+    margin: 70px auto;
     padding: 50px;
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
-#details-section img {
-    width: 20%;
-    border-radius: 10px;
-}
-
-#details-section>div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+#details div.first-wrapper,
+#details div.second-wrapper {
+    display: inline-block;
     width: 50%;
-    color: white;
-    font-size: 18px;
-    letter-spacing: 1.5px;
+    vertical-align: middle;
 }
 
-#details-section div h2 {
+#details div.first-wrapper p,
+#details div.second-wrapper p,
+#details div.second-wrapper a {
+    font-size: 18px;
+}
+
+#details div.first-wrapper img {
+    width: 55%;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: white;
+    transition-duration: 0.25s;
+}
+
+#details div.first-wrapper img:hover {
+    transform: scale(1.1);
+}
+
+#details div.first-wrapper p {
+    margin-top: 10px;
+}
+
+#details div.second-wrapper h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-#details-section div p {
+#details div.second-wrapper p {
     text-indent: 20px;
-    line-height: 24px;
+    line-height: 25px;
+    margin-bottom: 40px;
 }
 
-#details-section div a {
+#details div.second-wrapper a {
     text-decoration: none;
     padding: 7px 10px;
-    border-radius: 10px;
+    border-radius: 15px;
     color: white;
-    border: 2px solid white;
-    margin: 10px;
+    border: 3px solid white;
+    margin: 15px;
+}
+
+#details div.second-wrapper a:hover {
+    background-color: white;
+    color: black;
 }
