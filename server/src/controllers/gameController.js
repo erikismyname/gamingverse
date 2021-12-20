@@ -56,19 +56,15 @@ router.post(
         .withMessage('Title is required!')
         .bail()
         .isLength({ min: 3, max: 15 })
-        .withMessage('Title must be between 3 and 15 characters long!')
-        .bail()
-        .escape(),
+        .withMessage('Title must be between 3 and 15 characters long!'),
 
     body('description')
         .trim()
         .notEmpty()
         .withMessage('Description is required!')
         .bail()
-        .isLength({ min: 10, max: 400 })
-        .withMessage('Description must be between 10 and 400 characters long!')
-        .bail()
-        .escape(),
+        .isLength({ min: 10, max: 600 })
+        .withMessage('Description must be between 10 and 600 characters long!'),
 
     body('imageURL')
         .trim()
@@ -163,19 +159,15 @@ router.put(
         .withMessage('Title is required!')
         .bail()
         .isLength({ min: 3, max: 15 })
-        .withMessage('Title must be between 3 and 15 characters long!')
-        .bail()
-        .escape(),
+        .withMessage('Title must be between 3 and 15 characters long!'),
 
     body('description')
         .trim()
         .notEmpty()
         .withMessage('Description is required!')
         .bail()
-        .isLength({ min: 10, max: 400 })
-        .withMessage('Description must be between 10 and 400 characters long!')
-        .bail()
-        .escape(),
+        .isLength({ min: 10, max: 600 })
+        .withMessage('Description must be between 10 and 600 characters long!'),
 
     body('imageURL')
         .trim()
