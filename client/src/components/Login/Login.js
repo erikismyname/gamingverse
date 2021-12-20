@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 
 import styles from './Login.module.css';
 
@@ -28,7 +30,7 @@ const Login = ({ history }) => {
 
         } catch (err) {
 
-            alert(err);
+            toast(err.message);
 
         }
 
