@@ -1,4 +1,6 @@
 import { Switch, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { UserProvider } from './contexts/UserContext.js';
 
@@ -29,6 +31,8 @@ function App() {
 
                 <Header />
 
+                <ToastContainer />
+
                 <Switch>
 
                     <Route path="/" exact component={Home} />
@@ -51,7 +55,7 @@ function App() {
 
             </UserProvider>
 
-            <Footer />
+            {/* <Footer /> */}
 
         </>
     );
