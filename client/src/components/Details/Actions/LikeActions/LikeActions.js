@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-import useUserContext from '../../../hooks/useUserContext.js';
-import { likeGame, dislikeGame } from '../../../services/gameService.js';
+import useUserContext from '../../../../hooks/useUserContext.js';
+
+import { likeGame, dislikeGame } from '../../../../services/gameService.js';
 
 const LikeActions = ({ game, likeActionCb }) => {
 
@@ -21,7 +23,7 @@ const LikeActions = ({ game, likeActionCb }) => {
 
         } catch (err) {
 
-            alert(err);
+            toast(err.message);
 
         }
 
@@ -39,7 +41,7 @@ const LikeActions = ({ game, likeActionCb }) => {
 
         } catch (err) {
 
-            alert(err);
+            toast(err.message);
 
         }
 
@@ -51,13 +53,11 @@ const LikeActions = ({ game, likeActionCb }) => {
             : <Link to={`/${game._id}/like`} onClick={onLikeBtnClickHandler}>Like</Link>
     );
 
-    const likeActionsView = (
+    return (
         user._id && user._id != game.owner
             ? likeAction
             : ''
     );
-
-    return likeActionsView;
 
 };
 
