@@ -15,7 +15,7 @@ const UserProvider = ({ children }) => {
     const validateUser = () => user.username;
 
     return (
-        <UserContext.Provider value={{user,  addUser, removeUser, validateUser }}>
+        <UserContext.Provider value={{ user, addUser, removeUser, validateUser }}>
             {children}
         </UserContext.Provider>
     );
