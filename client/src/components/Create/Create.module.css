@@ -1,4 +1,4 @@
-#create-section form {
+#create form {
     margin: 100px auto;
     width: 25%;
     height: 400px;
@@ -8,22 +8,22 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-#create-section form h1,
-#create-section form input[type="text"],
-#create-section form textarea,
-#create-section form input[type="submit"] {
+#create form h1,
+#create form input[type="text"],
+#create form textarea,
+#create form input[type="submit"] {
     color: white;
 }
 
-#create-section form h1 {
+#create form h1 {
     display: inline-block;
     margin: 30px 0px;
     text-transform: uppercase;
 }
 
-#create-section form input[type="text"],
-#create-section form textarea,
-#create-section form input[type="submit"] {
+#create form input[type="text"],
+#create form textarea,
+#create form input[type="submit"] {
     display: block;
     margin: auto;
     text-align: center;
@@ -33,29 +33,29 @@
     border-radius: 10px;
 }
 
-#create-section form input[type="text"],
-#create-section form input[type="submit"] {
+#create form input[type="text"],
+#create form input[type="submit"] {
     font-size: 14px;
     letter-spacing: 1.5px;
 }
 
-#create-section form input[type="text"],
-#create-section form textarea {
+#create form input[type="text"],
+#create form textarea {
     width: 75%;
     padding: 10px;
 }
 
-#create-section form input[type="text"]:hover,
-#create-section form textarea:hover {
+#create form input[type="text"]:hover,
+#create form textarea:hover {
     width: 78%;
     transition-duration: 0.25s;
 }
 
-#create-section form input[name="title"] {
+#create form input[name="title"] {
     margin-bottom: 15px;
 }
 
-#create-section form textarea {
+#create form textarea {
     margin-bottom: 15px;
     font-size: 16px;
     letter-spacing: 0.5px;
@@ -63,17 +63,17 @@
     resize: none;
 }
 
-#create-section form input[name="image-url"] {
+#create form input[name="image-url"] {
     margin-bottom: 30px;
 }
 
-#create-section form input[type="submit"] {
+#create form input[type="submit"] {
     width: 37%;
     padding: 7px;
     margin-bottom: 25px;
 }
 
-#create-section form input[type="submit"]:hover {
+#create form input[type="submit"]:hover {
     cursor: pointer;
     width: 40%;
     transition: 0.25s;
