@@ -12,11 +12,11 @@ const handleRegisterFormInput = (formData) => {
 
         throw new Error('All fields are required!');
 
-    } else if (password != rePass) {
+    } else if (!/[@\.]/.test(email)) {
 
-        throw new Error('Passwords must match!');
+        throw new Error('Email must be a valid one!');
 
-    }
+    } else if ()
 
     return { email, username, password };
 
