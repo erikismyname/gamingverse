@@ -1,4 +1,4 @@
-#login-section form {
+#login form {
     margin: 100px auto;
     width: 20%;
     height: 305px;
@@ -8,23 +8,23 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-#login-section form h1,
-#login-section form input[type="text"],
-#login-section form input[type="password"],
-#login-section form input[type="submit"],
-#login-section form p {
+#login form h1,
+#login form input[type="text"],
+#login form input[type="password"],
+#login form input[type="submit"],
+#login form p {
     color: white;
 }
 
-#login-section form h1 {
+#login form h1 {
     display: inline-block;
     margin: 30px 0px;
     text-transform: uppercase;
 }
 
-#login-section form input[type="text"],
-#login-section form input[type="password"],
-#login-section form input[type="submit"] {
+#login form input[type="text"],
+#login form input[type="password"],
+#login form input[type="submit"] {
     display: block;
     margin: auto;
     background: none;
@@ -34,51 +34,51 @@
     font-size: 14px;
 }
 
-#login-section form h1,
-#login-section form input[type="text"],
-#login-section form input[type="password"],
-#login-section form input[type="submit"] {
+#login form h1,
+#login form input[type="text"],
+#login form input[type="password"],
+#login form input[type="submit"] {
     letter-spacing: 1.5px;
 }
 
-#login-section form input[type="text"],
-#login-section form input[type="password"] {
+#login form input[type="text"],
+#login form input[type="password"] {
     text-align: center;
     width: 75%;
     padding: 10px;
 }
 
-#login-section form input[type="text"]:hover,
-#login-section form input[type="password"]:hover {
+#login form input[type="text"]:hover,
+#login form input[type="password"]:hover {
     width: 78%;
     transition: 0.25s;
 }
 
-#login-section form input[type="text"] {
+#login form input[type="text"] {
     margin-bottom: 15px;
 }
 
-#login-section form input[type="password"] {
+#login form input[type="password"] {
     margin-bottom: 30px;
 }
 
-#login-section form input[type="submit"] {
+#login form input[type="submit"] {
     width: 37%;
     padding: 7px;
     margin-bottom: 25px;
 }
 
-#login-section form input[type="submit"]:hover {
+#login form input[type="submit"]:hover {
     cursor: pointer;
     width: 40%;
     transition: 0.25s;
 }
 
-#login-section form p {
+#login form p {
     letter-spacing: 1px;
 }
 
-#login-section form p a {
+#login form p a {
     text-decoration: none;
     background-color: white;
     color: black;
@@ -86,7 +86,7 @@
     border-radius: 10px;
 }
 
-/* #login-section form p a:hover {
+/* #login form p a:hover {
     padding-bottom: 3px;
     border-bottom: 2px solid white;
 
