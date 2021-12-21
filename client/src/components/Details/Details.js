@@ -3,8 +3,7 @@ import { toast } from 'react-toastify';
 
 import styles from './Details.module.css';
 
-import OwnerActions from './OwnerActions/OwnerActions.js';
-import LikeActions from './LikeActions/LikeActions.js';
+import Actions from './Actions/Actions.js';
 
 import { getGameById } from '../../services/gameService.js';
 
@@ -19,36 +18,29 @@ const Details = ({ match }) => {
     useEffect(() => {
 
         getGameById(gameId)
-            .then(game => {
-                setIsLoading(false);
-                setGame(game);
-            })
-            .catch(err => toast(err.message));
+            .then(game => setGame(game))
+            .catch(err => toast.error(err.message))
+            .finally(() => setIsLoading(false));
 
     }, [gameId]);
 
     const likeActionCb = (userId, type = 'like') =>
-        setGame(oldGame => ({ ...oldGame, likes: type == 'like' ? [...game.likes, userId] : game.likes.filter(id => id != userId) }));
+        setGame(oldGame => ({ ...oldGame, likes: type == 'like' ? [...oldGame.likes, userId] : oldGame.likes.filter(id => id != userId) }));
 
-    const detailsView = (
+    const view = (
         <>
             <div className={styles['first-wrapper']}>
-                <img src={game.imageURL} alt="Game cover." />
+                <img src={game.imageURL} alt="Game's cover" />
                 <p>{game.likes?.length} {game.likes?.length == 1 ? 'person likes' : 'people like'} this game</p>
             </div>
             <div className={styles['second-wrapper']}>
                 <div>
                     <h2>{game.title}</h2>
                     <p>{game.description}</p>
-
                 </div>
-                <div>
 
-                    <OwnerActions game={game} />
+                <Actions game={game} likeActionCb={likeActionCb} />
 
-                    <LikeActions game={game} likeActionCb={likeActionCb} />
-
-                </div>
             </div>
         </>
     );
@@ -58,7 +50,7 @@ const Details = ({ match }) => {
 
             {isLoading
                 ? <div id="loader"></div>
-                : detailsView
+                : view
             }
 
         </section>
