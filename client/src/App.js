@@ -27,7 +27,11 @@ function App() {
 
                 <Header />
 
-                <ToastContainer/>
+                <ToastContainer
+                autoClose={3000} 
+                hideProgressBar={true}
+                theme="dark"
+                />
 
                 <Switch>
 
