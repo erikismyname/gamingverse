@@ -1,4 +1,5 @@
 import { NavLink, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import useUserContext from '../../../hooks/useUserContext.js';
 
@@ -24,7 +25,7 @@ const UserNav = () => {
 
         } catch (err) {
 
-            alert(err);
+            toast.error(err.message);
 
         }
 
