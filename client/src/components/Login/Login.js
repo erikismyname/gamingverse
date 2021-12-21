@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-
 import styles from './Login.module.css';
 
 import useUserContext from '../../hooks/useUserContext.js';
@@ -30,14 +29,14 @@ const Login = ({ history }) => {
 
         } catch (err) {
 
-            toast(err.message);
+            toast.error(err.message);
 
         }
 
     };
 
     return (
-        <section id={styles['login-section']}>
+        <section id={styles.login}>
             <form onSubmit={onLoginFormSubmitHandler}>
                 <h1>Login</h1>
                 <input type="text" name="username" placeholder="Username" />
