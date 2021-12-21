@@ -17,11 +17,9 @@ const Catalog = () => {
     useEffect(() => {
 
         getAllGames()
-            .then(games => {
-                setIsLoading(false);
-                setGames(games);
-            })
-            .catch(err => toast(err.message));
+            .then(games => setGames(games))
+            .catch(err => toast.error(err.message))
+            .finally(() => setIsLoading(false));
 
     }, []);
 
