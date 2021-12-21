@@ -5,7 +5,7 @@ import styles from './Home.module.css';
 const Home = () => {
 
     const { text } = useTypewriter({
-        words: ['Welcome to Gamingverse!', 'In just a few simple clicks...', '...become a part of an evergrowing community!', 'Join now and share your favourite games...', '...with other gamers from all around the gamingverse!', 'Have fun!'],
+        words: ['Welcome to Gamingverse!', 'In just a few simple clicks...', '...become a part of an evergrowing community!', 'Join now and share your favourite games...', '...with other gamers from all around the Gamingverse!', 'Have fun!'],
         typeSpeed: 80,
         deleteSpeed: 80,
         delaySpeed: 1000,
