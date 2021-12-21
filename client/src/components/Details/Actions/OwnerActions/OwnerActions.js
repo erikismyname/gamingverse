@@ -1,7 +1,9 @@
 import { Link, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-import useUserContext from '../../../hooks/useUserContext.js';
-import { deleteGame } from '../../../services/gameService.js';
+import useUserContext from '../../../../hooks/useUserContext.js';
+
+import { deleteGame } from '../../../../services/gameService.js';
 
 const OwnerActions = ({ game }) => {
 
@@ -21,13 +23,13 @@ const OwnerActions = ({ game }) => {
 
         } catch (err) {
 
-            alert(err);
+            toast.error(err.message);
 
         }
 
     };
 
-    const result = (
+    return (
         user._id == game.owner
             ?
             <>
@@ -37,8 +39,6 @@ const OwnerActions = ({ game }) => {
             :
             ''
     );
-
-    return result;
 
 };
 
