@@ -16,7 +16,23 @@ const handleRegisterFormInput = (formData) => {
 
         throw new Error('Email must be a valid one!');
 
-    } else if ()
+    } else if (/[ ~`!@#$%^&*\(\)_\-+=\{\}\[\]|\\:;<>,\.\?\/]/.test(username)) {
+
+        throw new Error('Username must contain only latin characters!');
+
+    } else if (username.length < 3 || username.length > 5) {
+
+        throw new Error('Username must be between 3 and 5 characters long!');
+
+    } else if (password.length < 3) {
+
+        throw new Error('Password must be at least 3 characters long!');
+
+    } else if (password != rePass) {
+
+        throw new Error('Passwords must match!');
+
+    }
 
     return { email, username, password };
 
