@@ -15,11 +15,15 @@ const LikeActions = ({ game, likeActionCb }) => {
 
         ev.preventDefault();
 
+        ev.target.disabled = true;
+
         try {
 
             await dislikeGame(game._id);
 
             likeActionCb(user._id, 'dislike');
+
+            ev.target.disabled = false;
 
         } catch (err) {
 
@@ -33,11 +37,15 @@ const LikeActions = ({ game, likeActionCb }) => {
 
         ev.preventDefault();
 
+        ev.target.disabled = true;
+
         try {
 
             await likeGame(game._id);
 
             likeActionCb(user._id);
+
+            ev.target.disabled = false;
 
         } catch (err) {
 
