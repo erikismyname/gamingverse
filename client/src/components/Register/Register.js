@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import styles from './Register.module.css';
 
@@ -28,14 +29,14 @@ const Register = ({ history }) => {
 
         } catch (err) {
 
-            alert(err);
+            toast.error(err.message);
 
         }
 
     };
 
     return (
-        <section id={styles['register-section']}>
+        <section id={styles.register}>
             <form onSubmit={onRegisterFormSubmitHandler}>
                 <h1>Register</h1>
                 <input type="text" name="email" placeholder="Email" />
