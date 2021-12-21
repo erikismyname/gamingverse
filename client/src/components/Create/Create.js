@@ -1,8 +1,10 @@
+import { toast } from 'react-toastify';
+
+import styles from './Create.module.css';
+
 import handleGameDataFormInput from '../../util/handleGameDataFormInput.js';
 
 import { createGame } from '../../services/gameService.js';
-
-import styles from './Create.module.css';
 
 const Create = ({ history }) => {
 
@@ -20,14 +22,14 @@ const Create = ({ history }) => {
 
         } catch (err) {
 
-            alert(err);
+            toast.error(err.message);
 
         }
 
     };
 
     return (
-        <section id={styles['create-section']}>
+        <section id={styles.create}>
             <form onSubmit={onCreateFormSubmitHandler}>
                 <h1>Create</h1>
                 <input type="text" name="title" placeholder="Title" />
