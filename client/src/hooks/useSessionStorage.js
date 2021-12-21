@@ -6,9 +6,9 @@ const useSessionStorage = () => {
 
     const [user, setUser] = useState(() => {
 
-        const user = sessionStorage.getItem('user');
+        const user = JSON.parse(sessionStorage.getItem('user'));
 
-        return user ? JSON.parse(user) : initialUserState;
+        return user ? user : initialUserState;
 
     });
 
