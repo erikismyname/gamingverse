@@ -1,10 +1,8 @@
 import { Switch, Route } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { UserProvider } from './contexts/UserContext.js';
-
-import './App.css';
 
 import isUser from './guards/isUser.js';
 import isGuest from './guards/isGuest.js';
@@ -19,8 +17,6 @@ import Details from './components/Details/Details.js';
 import Edit from './components/Edit/Edit.js';
 import MyGames from './components/MyGames/MyGames.js';
 import Footer from './components/Footer/Footer.js';
-import Error from './components/Error/Error.js';
-import Dialog from './components/Dialog/Dialog.js';
 
 function App() {
 
@@ -31,7 +27,7 @@ function App() {
 
                 <Header />
 
-                <ToastContainer />
+                <ToastContainer/>
 
                 <Switch>
 
