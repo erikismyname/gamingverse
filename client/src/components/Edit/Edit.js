@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 import styles from './Edit.module.css';
 
 import handleGameDataFormInput from '../../util/handleGameDataFormInput.js';
+
 import { getGameById, updateGame } from '../../services/gameService.js';
 
 const Edit = ({ match, history }) => {
@@ -15,7 +17,7 @@ const Edit = ({ match, history }) => {
 
         getGameById(gameId)
             .then(game => setGame(game))
-            .catch(err => alert(err));
+            .catch(err => toast.error(err.messsage));
 
     }, [gameId]);
 
@@ -33,14 +35,14 @@ const Edit = ({ match, history }) => {
 
         } catch (err) {
 
-            alert(err);
+            toast.error(err.message);
 
         }
 
     };
 
     return (
-        <section id={styles['edit-section']}>
+        <section id={styles.edit}>
             <form onSubmit={onEditFormSubmitHandler}>
                 <h1>Edit</h1>
                 <input type="text" name="title" placeholder="Title" defaultValue={game.title} />
