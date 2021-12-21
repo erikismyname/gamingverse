@@ -1,4 +1,4 @@
-#edit-section form {
+#edit form {
     margin: 100px auto;
     width: 25%;
     height: 400px;
@@ -8,22 +8,22 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-#edit-section form h1,
-#edit-section form input[type="text"],
-#edit-section form textarea,
-#edit-section form input[type="submit"] {
+#edit form h1,
+#edit form input[type="text"],
+#edit form textarea,
+#edit form input[type="submit"] {
     color: white;
 }
 
-#edit-section form h1 {
+#edit form h1 {
     display: inline-block;
     margin: 30px 0px;
     text-transform: uppercase;
 }
 
-#edit-section form input[type="text"],
-#edit-section form textarea,
-#edit-section form input[type="submit"] {
+#edit form input[type="text"],
+#edit form textarea,
+#edit form input[type="submit"] {
     display: block;
     margin: auto;
     text-align: center;
@@ -33,29 +33,29 @@
     border-radius: 10px;
 }
 
-#edit-section form input[type="text"],
-#edit-section form input[type="submit"] {
+#edit form input[type="text"],
+#edit form input[type="submit"] {
     font-size: 14px;
     letter-spacing: 1.5px;
 }
 
-#edit-section form input[type="text"],
-#edit-section form textarea {
+#edit form input[type="text"],
+#edit form textarea {
     width: 75%;
     padding: 10px;
 }
 
-#edit-section form input[type="text"]:hover,
-#edit-section form textarea:hover {
+#edit form input[type="text"]:hover,
+#edit form textarea:hover {
     width: 78%;
     transition-duration: 0.25s;
 }
 
-#edit-section form input[name="title"] {
+#edit form input[name="title"] {
     margin-bottom: 15px;
 }
 
-#edit-section form textarea {
+#edit form textarea {
     margin-bottom: 15px;
     font-size: 16px;
     letter-spacing: 0.5px;
@@ -63,17 +63,17 @@
     resize: none;
 }
 
-#edit-section form input[name="image-url"] {
+#edit form input[name="image-url"] {
     margin-bottom: 30px;
 }
 
-#edit-section form input[type="submit"] {
+#edit form input[type="submit"] {
     width: 37%;
     padding: 7px;
     margin-bottom: 25px;
 }
 
-#edit-section form input[type="submit"]:hover {
+#edit form input[type="submit"]:hover {
     cursor: pointer;
     width: 40%;
     transition: 0.25s;
