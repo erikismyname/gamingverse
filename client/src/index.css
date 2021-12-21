@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url(./background.jpg);
+    background-image: url('../src/background.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position-x: center;
