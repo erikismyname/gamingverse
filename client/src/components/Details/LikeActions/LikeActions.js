@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-import useUserContext from '../../../../hooks/useUserContext.js';
+import useUserContext from '../../../hooks/useUserContext.js';
 
-import { likeGame, dislikeGame } from '../../../../services/gameService.js';
+import { likeGame, dislikeGame } from '../../../services/gameService.js';
 
-const LikeActions = ({ game, likeActionCb }) => {
+const LikeActions = ({ game, onLikeActionClickHandlerCb }) => {
 
     const { user } = useUserContext();
 
@@ -21,15 +21,15 @@ const LikeActions = ({ game, likeActionCb }) => {
 
             await dislikeGame(game._id);
 
-            likeActionCb(user._id, 'dislike');
-
-            ev.target.disabled = false;
+            onLikeActionClickHandlerCb(user._id, 'dislike');
 
         } catch (err) {
 
-            toast(err.message);
+            toast.error(err.message);
 
         }
+
+        ev.target.disabled = false;
 
     };
 
@@ -43,15 +43,15 @@ const LikeActions = ({ game, likeActionCb }) => {
 
             await likeGame(game._id);
 
-            likeActionCb(user._id);
-
-            ev.target.disabled = false;
+            onLikeActionClickHandlerCb(user._id);
 
         } catch (err) {
 
-            toast(err.message);
+            toast.error(err.message);
 
         }
+
+        ev.target.disabled = false;
 
     };
 
