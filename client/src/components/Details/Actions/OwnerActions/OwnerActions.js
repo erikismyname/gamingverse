@@ -1,6 +1,8 @@
 import { Link, useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import Dialog from '../../../Dialog/Dialog.js';
+
 import useUserContext from '../../../../hooks/useUserContext.js';
 
 import { deleteGame } from '../../../../services/gameService.js';
@@ -33,6 +35,7 @@ const OwnerActions = ({ game }) => {
         user._id == game.owner
             ?
             <>
+                <Dialog />
                 <Link to={`/edit/${game._id}`}>Edit</Link>
                 <Link to={`/delete/${game._id}`} onClick={onDeleteBtnClickHandler}>Delete</Link>
             </>
