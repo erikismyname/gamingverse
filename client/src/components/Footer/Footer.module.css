@@ -1,6 +1,6 @@
 #footer {
     position: absolute;
-    bottom: 15px;
+    bottom: 10px;
     width: 100%;
     color: white;
     text-align: center;
@@ -9,17 +9,12 @@
 #footer ul li {
     list-style: none;
     display: inline-block;
-    margin: 7px 10px;
+    margin: 5px 10px;
 }
 
 #footer ul li a {
-    color: white;
     font-size: 20px;
-}
-
-#footer ul li a:hover {
-    font-size: 25px;
-    transition: 0.25s;
+    color: white;
 }
 
 #footer p {
