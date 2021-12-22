@@ -1,25 +1,21 @@
 #my-games {
-    text-align: center;
-    margin: 50px auto;
-    background-color: rgba(0, 0, 0, 0.7);
+    margin: 80px auto;
     width: 90%;
-    max-height: 675px;
-    border-radius: 10px;
-    /* border: 1px solid white; */
-    padding-top: 20px;
-    padding-bottom: 20px;
-    overflow: auto;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 25px 0px;
+    box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
 }
 
 #my-games>p,
 #my-games>p>a {
     color: white;
     font-size: 20px;
-    letter-spacing: 1.5px;
 }
 
 #my-games>p>a {
     text-decoration: none;
-    padding-bottom: 1px;
-    border-bottom: 2px solid white;
+    background-color: white;
+    color: black;
+    padding: 5px 7px;
 }
