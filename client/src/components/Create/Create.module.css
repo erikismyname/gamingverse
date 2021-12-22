@@ -1,9 +1,8 @@
 #create form {
-    margin: 100px auto;
+    margin: 80px auto;
     width: 25%;
     height: 400px;
     text-align: center;
-    border-radius: 10px;
     box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -30,25 +29,23 @@
     background: none;
     outline: none;
     border: 2px solid white;
-    border-radius: 10px;
 }
 
 #create form input[type="text"],
 #create form input[type="submit"] {
     font-size: 14px;
-    letter-spacing: 1.5px;
 }
 
 #create form input[type="text"],
 #create form textarea {
     width: 75%;
     padding: 10px;
+    transition-duration: 0.25s;
 }
 
 #create form input[type="text"]:hover,
 #create form textarea:hover {
     width: 78%;
-    transition-duration: 0.25s;
 }
 
 #create form input[name="title"] {
@@ -71,10 +68,10 @@
     width: 37%;
     padding: 7px;
     margin-bottom: 25px;
+    transition-duration: 0.25s;
 }
 
 #create form input[type="submit"]:hover {
     cursor: pointer;
     width: 40%;
-    transition: 0.25s;
 }
