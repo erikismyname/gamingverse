@@ -10,9 +10,9 @@ const handleGameDataFormInput = (formData) => {
 
         throw new Error('All fields are required!');
 
-    } else if (title.length < 3 || title.length > 15) {
+    } else if (title.length < 3 || title.length > 20) {
 
-        throw new Error('Title must be between 3 and 15 characters long!');
+        throw new Error('Title must be between 3 and 20 characters long!');
 
     } else if (description.length < 10 || description.length > 600) {
 

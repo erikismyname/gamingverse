@@ -12,7 +12,7 @@ const handleRegisterFormInput = (formData) => {
 
         throw new Error('All fields are required!');
 
-    } else if (!/[@\.]/.test(email)) {
+    } else if (!email.includes('@') || !email.includes('.')) {
 
         throw new Error('Email must be a valid one!');
 
