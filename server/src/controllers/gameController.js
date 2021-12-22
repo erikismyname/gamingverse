@@ -55,8 +55,8 @@ router.post(
         .notEmpty()
         .withMessage('Title is required!')
         .bail()
-        .isLength({ min: 3, max: 15 })
-        .withMessage('Title must be between 3 and 15 characters long!'),
+        .isLength({ min: 3, max: 20 })
+        .withMessage('Title must be between 3 and 20 characters long!'),
 
     body('description')
         .trim()
@@ -158,8 +158,8 @@ router.put(
         .notEmpty()
         .withMessage('Title is required!')
         .bail()
-        .isLength({ min: 3, max: 15 })
-        .withMessage('Title must be between 3 and 15 characters long!'),
+        .isLength({ min: 3, max: 20 })
+        .withMessage('Title must be between 3 and 20 characters long!'),
 
     body('description')
         .trim()
