@@ -1,3 +1,13 @@
+#details-loading {
+    text-align: center;
+    width: 60%;
+    margin: 70px auto;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
+}
+
 #details {
     color: white;
     width: 60%;
@@ -5,6 +15,7 @@
     padding: 50px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 15px;
+    box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
 }
 
 #details div.first-wrapper,
@@ -36,7 +47,7 @@
     margin-top: 10px;
 }
 
-#details div.second-wrapper div.actions {
+#details div.second-wrapper div#actions {
     text-align: center;
 }
 
