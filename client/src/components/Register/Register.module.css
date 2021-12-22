@@ -3,7 +3,6 @@
     width: 20%;
     height: 418px;
     text-align: center;
-    border-radius: 10px;
     box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -14,13 +13,6 @@
 #register form input[type="submit"],
 #register form p {
     color: white;
-}
-
-#register form h1,
-#register form input[type="text"],
-#register form input[type="password"],
-#register form input[type="submit"] {
-    letter-spacing: 1.5px;
 }
 
 #register form h1 {
@@ -37,7 +29,6 @@
     background: none;
     outline: none;
     border: 2px solid white;
-    border-radius: 10px;
     font-size: 14px;
 }
 
@@ -46,18 +37,15 @@
     text-align: center;
     width: 75%;
     padding: 10px;
+    transition-duration: 0.25s;
 }
 
 #register form input[type="text"]:hover,
 #register form input[type="password"]:hover {
     width: 78%;
-    transition: 0.25s;
 }
 
-#register form input[type="text"] {
-    margin-bottom: 15px;
-}
-
+#register form input[type="text"],
 #register form input[type="password"] {
     margin-bottom: 15px;
 }
@@ -70,27 +58,17 @@
     width: 37%;
     padding: 7px;
     margin-bottom: 25px;
+    transition-duration: 0.25s;
 }
 
 #register form input[type="submit"]:hover {
     cursor: pointer;
     width: 40%;
-    transition: 0.25s;
-}
-
-#register form p {
-    letter-spacing: 0.5px;
 }
 
 #register form p a {
     text-decoration: none;
     background-color: white;
     color: black;
-    padding: 3px;
-    border-radius: 10px;
+    padding: 5px 7px;
 }
-
-/* #register form a:hover {
-    padding-bottom: 3px;
-    border-bottom: 2px solid white;
-} */
