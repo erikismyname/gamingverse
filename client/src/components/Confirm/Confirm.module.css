@@ -1,0 +1,46 @@
+#background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#confirm {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 50px 100px;
+    border: 3px solid white;
+    box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
+}
+
+#confirm p,
+#confirm a {
+    color: white;
+}
+
+#confirm p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+#confirm a {
+    background: none;
+    outline: none;
+    padding: 5px 7px;
+    font-size: 16px;
+    border: 3px solid white;
+    margin: 0px 10px;
+}
+
+#confirm a:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
