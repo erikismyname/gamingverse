@@ -1,5 +1,5 @@
 import { Switch, Route } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { UserProvider } from './contexts/UserContext.js';
@@ -25,13 +25,14 @@ function App() {
 
             <UserProvider>
 
-                <Header />
-
                 <ToastContainer
-                autoClose={3000} 
-                hideProgressBar={true}
-                theme="dark"
+                    autoClose={3000}
+                    hideProgressBar={true}
+                    theme="dark"
+                    transition={Slide}
                 />
+
+                <Header />
 
                 <Switch>
 
