@@ -1,9 +1,8 @@
 #login form {
-    margin: 100px auto;
+    margin: 80px auto;
     width: 20%;
     height: 305px;
     text-align: center;
-    border-radius: 10px;
     box-shadow: 7px 0px 20px 7px rgba(0, 0, 0, 0.7);
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -30,15 +29,7 @@
     background: none;
     outline: none;
     border: 2px solid white;
-    border-radius: 10px;
     font-size: 14px;
-}
-
-#login form h1,
-#login form input[type="text"],
-#login form input[type="password"],
-#login form input[type="submit"] {
-    letter-spacing: 1.5px;
 }
 
 #login form input[type="text"],
@@ -46,12 +37,12 @@
     text-align: center;
     width: 75%;
     padding: 10px;
+    transition-duration: 0.25s;
 }
 
 #login form input[type="text"]:hover,
 #login form input[type="password"]:hover {
     width: 78%;
-    transition: 0.25s;
 }
 
 #login form input[type="text"] {
@@ -66,28 +57,17 @@
     width: 37%;
     padding: 7px;
     margin-bottom: 25px;
+    transition-duration: 0.25s;
 }
 
 #login form input[type="submit"]:hover {
     cursor: pointer;
     width: 40%;
-    transition: 0.25s;
-}
-
-#login form p {
-    letter-spacing: 1px;
 }
 
 #login form p a {
     text-decoration: none;
     background-color: white;
     color: black;
-    padding: 3px;
-    border-radius: 10px;
+    padding: 5px 7px;
 }
-
-/* #login form p a:hover {
-    padding-bottom: 3px;
-    border-bottom: 2px solid white;
-
-} */
