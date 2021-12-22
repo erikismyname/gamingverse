@@ -7,7 +7,6 @@
 }
 
 #header a img {
-    border-radius: 15px;
     transition-duration: 0.25s;
 }
 
@@ -26,10 +25,8 @@
 #header nav ul li a {
     text-decoration: none;
     color: black;
-    letter-spacing: 1.5px;
     font-size: 20px;
     padding: 5px 7px;
-    border-radius: 15px;
 }
 
 #header nav ul li a:hover,
