@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import styles from './Details.module.css';
@@ -10,12 +9,10 @@ import Confirm from '../Confirm/Confirm.js';
 
 import { getGameById, deleteGame } from '../../services/gameService.js';
 
-const Details = ({ match }) => {
+const Details = ({ match, history }) => {
 
     const gameId = match.params.gameId;
     
-    const history = useHistory();
-
     const [isDeleteConfirmed, setIsDeleteConfirmed] = useState(false);
 
     const [isLoading, setIsLoading] = useState(true);
